@@ -15,12 +15,15 @@ namespace SparkyMSTest
         {
             // Arrange
             Calculator calc = new();
+            int param1 = 10;
+            int param2 = 20;
+            int expected = 30;
 
             // Act
-            int result = calc.AddNumbers(10, 20);
+            int actual = calc.AddNumbers(param1,param2);
 
             // Assert
-            Assert.AreEqual(30, result);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
