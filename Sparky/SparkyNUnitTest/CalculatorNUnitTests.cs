@@ -63,5 +63,32 @@ namespace Sparky
             // Assert
             Assert.That(excpected, Is.EqualTo(actual));
         }
+
+        [Test]
+        public void OddRanger_InputMinAndMaxRange_ReturnsValidOddNumberRange()
+        {
+            // Arrange
+            int min = 3;
+            int max = 10;
+            List<int> expected = new List<int> { 3, 5, 7, 9 };
+
+            // Act
+            List<int> actual = calculator.OddRange(min,max);
+
+            // Assert
+            Assert.Multiple(() => 
+            {
+                Assert.That(expected, Is.EquivalentTo(actual));
+                Assert.That(actual, Does.Contain(71));
+                Assert.That(actual.Count, Is.EqualTo(74));
+                Assert.That(actual, Is.Not.Empty);
+                Assert.That(actual, Has.No.Member(3));
+                Assert.That(actual, Is.Ordered);
+                Assert.That(actual, Is.Ordered.Descending);
+                Assert.That(actual, Is.Unique);
+            });
+
+
+        }
     }
 }
