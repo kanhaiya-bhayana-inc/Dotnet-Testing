@@ -9,10 +9,16 @@ namespace Sparky
     public class Customer
     {
         public int Discount = 20;
+        public string GreetMessage { get; set; }
         public string GreetAndCombineName(string firstName, string lastName)
         {
             Discount = 25;
-            return $"Hey, {firstName} {lastName}";
+            if (string.IsNullOrEmpty(firstName))
+            {
+                throw new ArgumentException("Empty First Name");
+            }
+            GreetMessage = $"Hey, {firstName} {lastName}";
+            return GreetMessage;
         }
     }
 }

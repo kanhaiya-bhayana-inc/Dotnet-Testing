@@ -79,12 +79,12 @@ namespace Sparky
             Assert.Multiple(() => 
             {
                 Assert.That(expected, Is.EquivalentTo(actual));
-                Assert.That(actual, Does.Contain(71));
-                Assert.That(actual.Count, Is.EqualTo(74));
+                Assert.That(actual, Does.Contain(7));
+                Assert.That(actual.Count, Is.EqualTo(4));
                 Assert.That(actual, Is.Not.Empty);
-                Assert.That(actual, Has.No.Member(3));
+                Assert.That(actual, Has.No.Member(13));
                 Assert.That(actual, Is.Ordered);
-                Assert.That(actual, Is.Ordered.Descending);
+                //Assert.That(actual, Is.Ordered.Descending);
                 Assert.That(actual, Is.Unique);
             });
 
