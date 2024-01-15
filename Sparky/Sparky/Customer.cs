@@ -8,6 +8,7 @@ namespace Sparky
 {
     public class Customer
     {
+        public int OrderTotal;
         public int Discount = 20;
         public string GreetMessage { get; set; }
         public string GreetAndCombineName(string firstName, string lastName)
@@ -20,5 +21,19 @@ namespace Sparky
             GreetMessage = $"Hey, {firstName} {lastName}";
             return GreetMessage;
         }
+
+        public CustomerType GetCustomerDetails()
+        {
+            if (OrderTotal < 100)
+            {
+                return new BasicCustomer();
+            }
+            return new PlatinumCustomer();
+        }
     }
+
+    public class CustomerType { }
+    public class BasicCustomer : CustomerType { }
+    public class PlatinumCustomer : CustomerType { }
+
 }
