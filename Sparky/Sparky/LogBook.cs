@@ -12,5 +12,23 @@ namespace Sparky
         {
             Console.WriteLine(message);
         }
+        
+
+        bool ILogBook.LogToDb(string message)
+        {
+            Console.WriteLine(message);
+            return true;
+        }
+
+        bool ILogBook.LogBalanceAfterWithdrawl(int balanceAfterWithdrawl)
+        {
+            if (balanceAfterWithdrawl >= 0)
+            {
+                Console.WriteLine("Success");
+                return true;
+            }
+            Console.WriteLine("Failure");
+            return false;   
+        }
     }
 }

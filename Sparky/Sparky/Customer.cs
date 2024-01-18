@@ -11,6 +11,11 @@ namespace Sparky
         public int OrderTotal;
         public int Discount = 20;
         public string GreetMessage { get; set; }
+        public bool IsPlatinum { get; set; }
+        public Customer()
+        {
+            IsPlatinum = false;
+        }
         public string GreetAndCombineName(string firstName, string lastName)
         {
             Discount = 25;

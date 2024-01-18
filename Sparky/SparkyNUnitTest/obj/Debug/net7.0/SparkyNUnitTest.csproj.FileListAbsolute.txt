@@ -100,3 +100,8 @@ D:\Data\learning\Testing\Bhrugan-Patel\Sparky\SparkyNUnitTest\obj\Debug\net7.0\r
 D:\Data\learning\Testing\Bhrugan-Patel\Sparky\SparkyNUnitTest\obj\Debug\net7.0\SparkyNUnitTest.pdb
 D:\Data\learning\Testing\Bhrugan-Patel\Sparky\SparkyNUnitTest\obj\Debug\net7.0\SparkyNUnitTest.genruntimeconfig.cache
 D:\Data\learning\Testing\Bhrugan-Patel\Sparky\SparkyNUnitTest\obj\Debug\net7.0\ref\SparkyNUnitTest.dll
+D:\Data\learning\Testing\Bhrugan-Patel\Sparky\SparkyNUnitTest\bin\Debug\net7.0\Castle.Core.dll
+D:\Data\learning\Testing\Bhrugan-Patel\Sparky\SparkyNUnitTest\bin\Debug\net7.0\Moq.dll
+D:\Data\learning\Testing\Bhrugan-Patel\Sparky\SparkyNUnitTest\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
+D:\Data\learning\Testing\Bhrugan-Patel\Sparky\SparkyNUnitTest\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+D:\Data\learning\Testing\Bhrugan-Patel\Sparky\SparkyNUnitTest\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll

@@ -9,5 +9,7 @@ namespace Sparky
     public interface ILogBook
     {
         void Message(string message);
+        bool LogToDb(string message);
+        bool LogBalanceAfterWithdrawl(int balanceAfterWithdrawl);
     }
 }
