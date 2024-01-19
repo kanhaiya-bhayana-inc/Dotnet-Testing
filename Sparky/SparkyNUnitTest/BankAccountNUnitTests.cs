@@ -66,5 +66,41 @@ namespace Sparky
             var result = bankAccount.Withdraw(withdraw);
             Assert.That(result, Is.False);
         }
+
+        [Test]
+        public void BankLogDummy_LogMocString_ReturnTrue()
+        {
+            var logMock = new Mock<ILogBook>();
+            string expected = "hello";
+
+            logMock.Setup(u => u.MessageWithReturnStr(It.IsAny<string>())).Returns((string str)=> str.ToLower());
+
+            Assert.That(logMock.Object.MessageWithReturnStr("HElLo"), Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void BankLogDummy_LogMockStringOutputStr_ReturnTrue()
+        {
+            var logMock = new Mock<ILogBook>();
+            string expected = "hello";
+
+            logMock.Setup(u => u.LogWithOutputResult(It.IsAny<string>(), out expected)).Returns(true);
+            string actual = "";
+            Assert.That(logMock.Object.LogWithOutputResult("Ben", out actual),Is.True);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void BankLogDummy_LogRefChecker_ReturnTrue()
+        {
+            var logMock = new Mock<ILogBook>();
+            Customer customer = new();
+            Customer customerNotUsed = new();
+
+
+            logMock.Setup(u => u.LogWithRefObj(ref customer)).Returns(true);
+            Assert.That(logMock.Object.LogWithRefObj(ref customer), Is.True);
+        }
     }
 }

@@ -11,5 +11,9 @@ namespace Sparky
         void Message(string message);
         bool LogToDb(string message);
         bool LogBalanceAfterWithdrawl(int balanceAfterWithdrawl);
+        string MessageWithReturnStr(string message);
+        bool LogWithOutputResult(string str, out string outputStr);
+        bool LogWithRefObj(ref Customer customer);
+
     }
 }

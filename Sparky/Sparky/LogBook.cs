@@ -30,5 +30,22 @@ namespace Sparky
             Console.WriteLine("Failure");
             return false;   
         }
+
+        public string MessageWithReturnStr(string message)
+        {
+            Console.WriteLine(message);
+            return message.ToLower();
+        }
+
+        public bool LogWithOutputResult(string str, out string outputStr)
+        {
+            outputStr = "Hello " + str;
+            return true;
+        }
+
+        public bool LogWithRefObj(ref Customer customer)
+        {
+            return true;
+        }
     }
 }
