@@ -8,6 +8,9 @@ namespace Sparky
 {
     public class LogFakker : ILogBook
     {
+        public int LogSeverity { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string LogType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public bool LogBalanceAfterWithdrawl(int balanceAfterWithdrawl)
         {
             throw new NotImplementedException();

@@ -8,6 +8,9 @@ namespace Sparky
 {
     public class LogBook : ILogBook
     {
+        public int LogSeverity { get; set; }
+        public string LogType { get; set; }
+
         public void Message(string message)
         {
             Console.WriteLine(message);

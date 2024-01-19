@@ -102,5 +102,34 @@ namespace Sparky
             logMock.Setup(u => u.LogWithRefObj(ref customer)).Returns(true);
             Assert.That(logMock.Object.LogWithRefObj(ref customer), Is.True);
         }
+
+        [Test]
+        public void BankLogDummy_SetAndGetLogTypeAndSeveirtyMock_MockTest()
+        {
+            var logMock = new Mock<ILogBook>();
+            logMock.SetupAllProperties();
+            logMock.Setup(u => u.LogSeverity).Returns(10);
+            logMock.Setup(u => u.LogType).Returns("Warning");
+
+            //logMock.Object.LogSeverity = 100;           
+            Assert.That(logMock.Object.LogSeverity, Is.EqualTo(10));
+            Assert.That(logMock.Object.LogType, Is.EqualTo("Warning"));
+
+            // callbacks
+            string logTemp = "Hello, ";
+            logMock.Setup(u => u.LogToDb(It.IsAny<string>()))
+                .Returns(true).Callback((string str)=> logTemp += str);
+
+            logMock.Object.LogToDb("Ben");
+            Assert.That(logTemp, Is.EqualTo("Hello, Ben"));
+
+            // callbacks
+            int counter = 5;
+            logMock.Setup(u => u.LogToDb(It.IsAny<string>()))
+                .Returns(true).Callback(()=>counter++);
+            logMock.Object.LogToDb("Ben");
+            logMock.Object.LogToDb("Ben");
+            Assert.That(counter, Is.EqualTo(7));
+        }
     }
 }
