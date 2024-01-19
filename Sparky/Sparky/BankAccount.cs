@@ -21,6 +21,8 @@ namespace Sparky
         {
             balance += amount;
             _logBook.Message("Amount Deposited!");
+            _logBook.Message("Test");
+            _logBook.LogSeverity = 101;
             return true;
         }
         public bool Withdraw(int amount)
